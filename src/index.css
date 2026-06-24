@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NAUJIEJI RYTAI FUSION — premium dark fusion restaurant design system.
+   All colors HSL. Tokens for ember, gold, charcoal palette. */
+
+@layer base {
+  :root {
+    /* Charcoal canvas */
+    --background: 24 10% 6%;
+    --foreground: 36 28% 92%;
+
+    --card: 24 10% 9%;
+    --card-foreground: 36 28% 92%;
+
+    --popover: 24 12% 8%;
+    --popover-foreground: 36 28% 92%;
+
+    /* Ember red — primary brand */
+    --primary: 14 88% 52%;
+    --primary-foreground: 30 20% 98%;
+
+    /* Charcoal surface */
+    --secondary: 24 8% 14%;
+    --secondary-foreground: 36 28% 92%;
+
+    --muted: 24 6% 16%;
+    --muted-foreground: 36 12% 64%;
+
+    /* Gold accent */
+    --accent: 40 80% 58%;
+    --accent-foreground: 24 30% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 36 28% 92%;
+
+    --border: 30 10% 18%;
+    --input: 30 10% 18%;
+    --ring: 14 88% 52%;
+
+    --radius: 0.25rem;
+
+    /* Brand specific */
+    --ember: 14 88% 52%;
+    --ember-glow: 22 95% 58%;
+    --gold: 40 80% 58%;
+    --gold-soft: 38 60% 70%;
+    --charcoal: 24 8% 10%;
+    --charcoal-deep: 24 12% 5%;
+
+    /* Gradients */
+    --gradient-flame: linear-gradient(135deg, hsl(14 88% 52%), hsl(28 95% 58%), hsl(40 90% 60%));
+    --gradient-ember: linear-gradient(180deg, hsl(14 88% 52% / 0), hsl(14 88% 52% / 0.18));
+    --gradient-dark: linear-gradient(180deg, hsl(24 12% 5% / 0) 0%, hsl(24 12% 5% / 0.4) 50%, hsl(24 12% 5%) 100%);
+    --gradient-radial-ember: radial-gradient(ellipse at center, hsl(14 88% 52% / 0.25), transparent 60%);
+    --gradient-gold-text: linear-gradient(135deg, hsl(40 80% 70%), hsl(38 70% 55%));
+
+    /* Shadows */
+    --shadow-ember: 0 20px 60px -20px hsl(14 88% 52% / 0.45);
+    --shadow-glow: 0 0 40px hsl(22 95% 58% / 0.35);
+    --shadow-card: 0 12px 40px -12px hsl(0 0% 0% / 0.6);
+    --shadow-gold: 0 0 30px hsl(40 80% 58% / 0.35);
+
+    /* Motion */
+    --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 { @apply font-serif tracking-tight; }
+  ::selection { background: hsl(var(--ember) / 0.4); color: hsl(var(--foreground)); }
+}
+
+@layer utilities {
+  .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+  .font-sans { font-family: 'Inter', system-ui, sans-serif; }
+
+  .text-gold-gradient {
+    background: var(--gradient-gold-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-flame-gradient {
+    background: var(--gradient-flame);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-flame { background: var(--gradient-flame); }
+  .bg-radial-ember { background: var(--gradient-radial-ember); }
+
+  .shadow-ember { box-shadow: var(--shadow-ember); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+
+  .ember-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--ember) / 0.6), transparent);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s var(--ease-luxury), transform 0.9s var(--ease-luxury);
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  .flame-flicker { animation: flicker 4s ease-in-out infinite; }
+
+  .noise-overlay {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}

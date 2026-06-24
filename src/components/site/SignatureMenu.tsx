@@ -1,0 +1,95 @@
+import { ArrowRight, Flame } from "lucide-react";
+import beef from "@/assets/dish-wok-beef.jpg";
+import wagyu from "@/assets/dish-wagyu-skewers.jpg";
+import ramen from "@/assets/dish-spicy-ramen.jpg";
+import cod from "@/assets/dish-black-cod.jpg";
+import prawns from "@/assets/dish-chili-prawns.jpg";
+import duck from "@/assets/dish-duck.jpg";
+import tuna from "@/assets/dish-tuna.jpg";
+
+type Dish = {
+  name: string;
+  desc: string;
+  price: string;
+  img: string;
+  special?: boolean;
+};
+
+const dishes: Dish[] = [
+  { name: "Sichuan Wok Beef", desc: "Smoky tenderloin, scallion, dried chili, soy reduction.", price: "€26", img: beef, special: true },
+  { name: "Wagyu Miso Skewers", desc: "Charcoal-glazed wagyu, white miso, sesame crumb.", price: "€34", img: wagyu },
+  { name: "Volcano Ramen", desc: "Pork belly, chili oil, soft egg, fermented broth.", price: "€19", img: ramen },
+  { name: "Black Cod Saikyo", desc: "72h-marinated cod, torched miso, edible blossoms.", price: "€38", img: cod, special: true },
+  { name: "Chili Tiger Prawns", desc: "Sichuan glaze, fermented bean, citrus oil.", price: "€28", img: prawns },
+  { name: "Hoisin Duck Breast", desc: "Pink-roasted duck, pomegranate, scallion.", price: "€32", img: duck },
+  { name: "Sesame Tuna Tataki", desc: "Bluefin, ponzu pearls, micro shiso.", price: "€29", img: tuna },
+  { name: "Chef's Tasting Wok", desc: "Five-course flame-tossed selection. Daily.", price: "€68", img: beef },
+];
+
+export const SignatureMenu = () => {
+  return (
+    <section id="menu" className="relative py-28 lg:py-36">
+      <div className="container">
+        <div className="reveal max-w-2xl mb-16">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px w-10 bg-gold" />
+            <span className="text-[11px] uppercase tracking-[0.4em] text-gold">Signature Plates</span>
+          </div>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+            Eight dishes. <span className="italic text-flame-gradient">One fire.</span>
+          </h2>
+          <p className="mt-5 text-muted-foreground max-w-lg">
+            A tightly curated menu — every plate handcrafted at the wok or grill, plated
+            with European restraint and Asian soul.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {dishes.map((d, i) => (
+            <article
+              key={d.name}
+              className="reveal group relative bg-card border border-border overflow-hidden transition-all duration-500 hover:border-ember/60 hover:-translate-y-1 hover:shadow-ember"
+              style={{ transitionDelay: `${i * 40}ms` }}
+            >
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={d.img}
+                  alt={d.name}
+                  loading="lazy"
+                  width={800}
+                  height={800}
+                  className="h-full w-full object-cover transition-transform duration-1200 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent opacity-90 group-hover:opacity-70 transition-opacity" />
+                {d.special && (
+                  <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 bg-flame text-primary-foreground text-[10px] uppercase tracking-[0.2em] shadow-glow">
+                    <Flame className="h-3 w-3" /> Chef's Special
+                  </span>
+                )}
+                <span className="absolute top-3 right-3 font-serif text-lg text-gold drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+                  {d.price}
+                </span>
+              </div>
+              <div className="p-5">
+                <h3 className="font-serif text-xl text-foreground group-hover:text-gold transition-colors">
+                  {d.name}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="reveal mt-14 flex justify-center">
+          <a
+            href="#full-menu"
+            className="group inline-flex items-center gap-3 border border-gold/50 text-gold px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold hover:text-accent-foreground transition-all duration-500"
+          >
+            Explore Full Menu
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
