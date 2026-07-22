@@ -15,7 +15,7 @@ const Index = () => {
   useReveal();
 
   useEffect(() => {
-    document.title = "Naujieji Rytai Fusion · Wok, Grill & Spice in Vilnius";
+    document.title = "Naujieji Rytai Fusion · African–Lithuanian Grill in Vilnius";
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"]`);
       if (!el) {
@@ -27,7 +27,7 @@ const Index = () => {
     };
     setMeta(
       "description",
-      "Premium Asian-European fusion dining in Vilnius. Hand-tossed wok, charcoal grill, signature spice. Reserve your table tonight."
+      "Premium African–Lithuanian fusion dining in Vilnius. Suya grill, jollof, Baltic classics reimagined with bold spice. Reserve your table tonight."
     );
   }, []);
 

@@ -1,29 +1,55 @@
 import { useState } from "react";
+import boso from "@/assets/items/boso-burgeris.jpg.asset.json";
+import sweetChili from "@/assets/items/sweet-chili-mesainis.jpg.asset.json";
+import elote from "@/assets/items/elote-vistienos-mesainis.jpg.asset.json";
+import klas from "@/assets/items/klasikinis-mesainis.jpg.asset.json";
+import cezario from "@/assets/items/cezario-salotos.jpg.asset.json";
+import krev from "@/assets/items/kreveciu-salotos.jpg.asset.json";
+import bbq from "@/assets/items/bbq-sparneliai.jpg.asset.json";
+import tajin from "@/assets/items/tajin-sparneliai.jpg.asset.json";
+import loaded from "@/assets/items/loaded-bulvytes.jpg.asset.json";
+import fusionElote from "@/assets/items/fusion-elote.jpg.asset.json";
+import virtinukai from "@/assets/items/jautienos-virtinukai.jpg.asset.json";
+import kukuruzu from "@/assets/items/kukuruzu-desrainiai.jpg.asset.json";
+import desrainiukai from "@/assets/items/desrainiukai.jpg.asset.json";
 
-const menuData = {
-  Wok: [
-    ["Sichuan Wok Beef", "Tenderloin, scallion, dried chili.", "€26"],
-    ["Mapo Aubergine", "Silken tofu, fermented bean, sansho.", "€18"],
-    ["Drunken Noodles", "Wide rice noodle, basil, bird's eye.", "€19"],
-    ["Volcano Ramen", "Pork belly, chili oil, soft egg.", "€19"],
+type Item = { name: string; desc?: string; price: string; img?: string };
+
+const menuData: Record<string, Item[]> = {
+  "Mėsainiai": [
+    { name: "Boso Burgeris", desc: "Signature house burger — brioche bun, prime beef, house sauce.", price: "€12.90", img: boso.url },
+    { name: "Elote Traškios Vištienos Mėsainis", desc: "Crispy chicken, elote street-corn glaze.", price: "€10.90", img: elote.url },
+    { name: "Trąškus Sweet Chili Vištienos Mėsainis", desc: "Crispy chicken, sweet chili glaze.", price: "€9.90", img: sweetChili.url },
+    { name: "Klasikinis Mėsainis su Šonine", desc: "Classic beef burger with crispy bacon.", price: "€8.90", img: klas.url },
   ],
-  Grill: [
-    ["Wagyu Miso Skewers", "Charcoal-glazed wagyu, sesame crumb.", "€34"],
-    ["Hoisin Duck Breast", "Pink-roasted, pomegranate.", "€32"],
-    ["Korean BBQ Short Rib", "48h marinated, gochujang glaze.", "€29"],
-    ["Yakitori Selection", "Five skewers from the binchotan.", "€22"],
+  "Salotos": [
+    { name: "Cezario Salotos su Kepta Vištiena", desc: "Caesar salad with grilled chicken.", price: "€10.90", img: cezario.url },
+    { name: "Azijietiškos Krevečių Salotos", desc: "Asian-style prawn salad, citrus-chili dressing.", price: "€11.90", img: krev.url },
+    { name: "Coleslaw Salotos", desc: "House coleslaw.", price: "€2.50" },
   ],
-  "Signature Fusion": [
-    ["Black Cod Saikyo", "72h miso marinated, torched.", "€38"],
-    ["Chili Tiger Prawns", "Sichuan glaze, citrus oil.", "€28"],
-    ["Sesame Tuna Tataki", "Bluefin, ponzu pearls.", "€29"],
-    ["Chef's Tasting Wok", "Five-course tasting. Daily.", "€68"],
+  "Sparneliai & Užkandžiai": [
+    { name: "Lipnūs BBQ Sparneliai (5 vnt)", desc: "Sticky BBQ chicken wings.", price: "€9.90", img: bbq.url },
+    { name: "Trąškūs Vištienos Sparneliai su Tajin (5 vnt)", desc: "Crispy wings, Tajin spice.", price: "€8.90", img: tajin.url },
+    { name: "Loaded Bulvytės su Jautiena", desc: "Loaded fries, beef, cheese.", price: "€9.90", img: loaded.url },
+    { name: "Fusion Elote", desc: "Grilled street corn, cotija, chili-lime.", price: "€5.90", img: fusionElote.url },
+    { name: "Jautienos Virtinukai", desc: "Beef dumplings.", price: "€8.00", img: virtinukai.url },
+    { name: "Čeburekai (3 vnt)", desc: "Fried stuffed pastries.", price: "€7.30" },
+    { name: "Fusion Krevetės (8 vnt)", desc: "Signature fusion prawns.", price: "€11.00" },
+    { name: "Kepta Duona", desc: "Fried garlic rye bread.", price: "€5.50" },
+    { name: "Kepta Duona su Sūrio Padažu", desc: "Fried bread with cheese dip.", price: "€6.50" },
+    { name: "Žemės Riešutai", desc: "Roasted peanuts.", price: "€5.50" },
   ],
-  Drinks: [
-    ["Yuzu Negroni", "Campari, gin, yuzu bitters.", "€14"],
-    ["Smoke & Plum", "Mezcal, umeshu, charred citrus.", "€15"],
-    ["Sake Flight", "Three premium pours.", "€18"],
-    ["Reserve Riesling", "Glass — Mosel, Germany.", "€12"],
+  "Priedai": [
+    { name: "Fri Bulvytės", desc: "Classic fries.", price: "€4.00" },
+    { name: "Fri Bulvytės su Tajin", desc: "Fries with Tajin spice.", price: "€4.50" },
+    { name: "Fri Bulvytės su Sūriu", desc: "Cheesy fries.", price: "€5.50" },
+  ],
+  "Vaikams": [
+    { name: "Linksmieji Kukurūzų Dešrainiai", desc: "Corn-batter mini hot dogs.", price: "€6.90", img: kukuruzu.url },
+    { name: "Linksmieji Dešrainiukai", desc: "Kids' hot dogs.", price: "€6.50", img: desrainiukai.url },
+    { name: "Mažylio Vištienos Mėsainis su Bulvytėm", desc: "Kids' chicken burger with fries.", price: "€8.50" },
+    { name: "Mažylio Trąškios Vištienos Juostelės (3 vnt) su Bulvytėmis", desc: "Chicken strips with fries.", price: "€6.99" },
+    { name: "Mažylio Sūrainis su Bulvytėmis", desc: "Kids' cheeseburger with fries.", price: "€8.50" },
   ],
 };
 
@@ -60,19 +86,36 @@ export const FullMenu = () => {
           ))}
         </div>
 
-        <div className="reveal max-w-3xl mx-auto">
+        <div className="reveal max-w-4xl mx-auto">
           <ul className="divide-y divide-border/60">
-            {menuData[active].map(([name, desc, price]) => (
-              <li key={name} className="flex items-baseline gap-6 py-6 group">
-                <div className="flex-1">
+            {menuData[active].map((item) => (
+              <li key={item.name} className="flex items-center gap-5 sm:gap-8 py-6 group">
+                {item.img ? (
+                  <div className="relative shrink-0 w-20 h-20 sm:w-28 sm:h-28 overflow-hidden border border-border/60">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      loading="lazy"
+                      width={224}
+                      height={224}
+                      className="w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep/60 to-transparent pointer-events-none" />
+                  </div>
+                ) : (
+                  <div className="shrink-0 w-20 h-20 sm:w-28 sm:h-28 border border-border/60 bg-charcoal-deep/60 flex items-center justify-center">
+                    <span className="font-serif text-2xl text-gold/60">✦</span>
+                  </div>
+                )}
+                <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-3">
-                    <h3 className="font-serif text-xl text-foreground group-hover:text-gold transition-colors">
-                      {name}
+                    <h3 className="font-serif text-lg sm:text-xl text-foreground group-hover:text-gold transition-colors truncate">
+                      {item.name}
                     </h3>
                     <span className="flex-1 border-b border-dashed border-border/60 mb-1.5" />
-                    <span className="font-serif text-lg text-gold">{price}</span>
+                    <span className="font-serif text-lg text-gold">{item.price}</span>
                   </div>
-                  <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
+                  {item.desc && <p className="mt-1.5 text-sm text-muted-foreground">{item.desc}</p>}
                 </div>
               </li>
             ))}

@@ -8,7 +8,7 @@ export const About = () => {
           <div className="relative overflow-hidden">
             <img
               src={chef}
-              alt="Head Chef Lukas Varnas at the wok station"
+              alt="Head Chef Lukas Varnas at the grill"
               loading="lazy"
               width={900}
               height={1100}
@@ -28,16 +28,17 @@ export const About = () => {
             <span className="text-[11px] uppercase tracking-[0.4em] text-gold">Our Story</span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-foreground">
-            Where the East <span className="italic text-flame-gradient">ignites</span> the European table.
+            Where West Africa <span className="italic text-flame-gradient">ignites</span> the Baltic table.
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed">
             Naujieji Rytai — "the new East" — was born from a simple obsession: the
-            wild aroma of a flaming wok, served on porcelain worthy of a European
+            smoky perfume of a suya grill, served on porcelain worthy of a Lithuanian
             grand maison. Every plate is a dialogue between two cultures, written in
             chili, charcoal, and gold.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Our open kitchen is theatre. Our pantry is a passport. Our table is yours.
+            Our open kitchen is theatre. Our pantry is a passport between Lagos and
+            Vilnius. Our table is yours.
           </p>
 
           <div className="ember-divider my-10" />

@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Sizzling wok with vibrant flames at NAUJIEJI RYTAI FUSION"
+          alt="Open flame grill at NAUJIEJI RYTAI FUSION"
           width={1920}
           height={1280}
           className="h-full w-full object-cover animate-slow-zoom"
@@ -23,14 +23,14 @@ export const Hero = () => {
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-8 animate-fade-in">
             <span className="h-px w-10 bg-gold" />
-            <span className="text-[11px] uppercase tracking-[0.4em] text-gold">Fusion · Wok · Grill</span>
+            <span className="text-[11px] uppercase tracking-[0.4em] text-gold">Suya · Grill · Fire</span>
           </div>
 
           <h1
             className="font-serif text-5xl sm:text-6xl lg:text-8xl leading-[0.95] text-foreground animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
-            Wok <span className="text-flame-gradient italic">·</span> Grill
+            Suya <span className="text-flame-gradient italic">·</span> Grill
             <br />
             <span className="text-flame-gradient italic">Spice</span> Experience
           </h1>
@@ -39,8 +39,9 @@ export const Hero = () => {
             className="mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed animate-fade-in"
             style={{ animationDelay: "0.25s" }}
           >
-            A premium European fusion table where Asian fire meets refined plating.
-            Hand-tossed woks, charcoal-grilled cuts, and signatures kissed by chili and gold.
+            A premium fusion table where the fire of West Africa meets the soul of
+            Lithuania. Charcoal-grilled suya, slow-simmered stews, and Baltic classics
+            reimagined with bold spice and gold.
           </p>
 
           <div

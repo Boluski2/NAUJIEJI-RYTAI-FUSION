@@ -25,7 +25,7 @@ export const Footer = () => {
               </div>
             </a>
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Wok, grill and spice — a premium European fusion experience in the heart of Vilnius.
+              Suya, grill and spice — a premium African–Lithuanian fusion experience in the heart of Vilnius.
             </p>
             <form onSubmit={submit} className="mt-6 flex max-w-sm">
               <input

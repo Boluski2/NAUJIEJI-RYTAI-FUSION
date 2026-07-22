@@ -11,11 +11,11 @@ export const ChefSpecial = () => {
             <Flame className="h-3 w-3" /> Tonight's Special
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-            Black Cod <span className="italic text-gold-gradient">Saikyo</span>
+            Grilled Salmon <span className="italic text-gold-gradient">Yassa</span>
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed max-w-lg">
-            Marinated for 72 hours in a custom blend of three white misos, torched
-            tableside, finished with edible blossoms from our rooftop garden.
+            Baltic salmon marinated for 24 hours in mustard, lemon and slow-cooked
+            onion confit, finished over open flame with herbs from our rooftop garden.
             Limited to twelve plates per evening.
           </p>
           <div className="mt-8 flex items-center gap-6">
@@ -34,7 +34,7 @@ export const ChefSpecial = () => {
           <div className="relative overflow-hidden">
             <img
               src={cod}
-              alt="Black Cod Saikyo signature dish"
+              alt="Grilled Salmon Yassa signature dish"
               loading="lazy"
               width={800}
               height={800}

@@ -1,29 +1,24 @@
 import { ArrowRight, Flame } from "lucide-react";
-import beef from "@/assets/dish-wok-beef.jpg";
-import wagyu from "@/assets/dish-wagyu-skewers.jpg";
-import ramen from "@/assets/dish-spicy-ramen.jpg";
-import cod from "@/assets/dish-black-cod.jpg";
-import prawns from "@/assets/dish-chili-prawns.jpg";
-import duck from "@/assets/dish-duck.jpg";
-import tuna from "@/assets/dish-tuna.jpg";
+import boso from "@/assets/items/boso-burgeris.jpg.asset.json";
+import elote from "@/assets/items/elote-vistienos-mesainis.jpg.asset.json";
+import klas from "@/assets/items/klasikinis-mesainis.jpg.asset.json";
+import cezario from "@/assets/items/cezario-salotos.jpg.asset.json";
+import krev from "@/assets/items/kreveciu-salotos.jpg.asset.json";
+import bbq from "@/assets/items/bbq-sparneliai.jpg.asset.json";
+import loaded from "@/assets/items/loaded-bulvytes.jpg.asset.json";
+import fusionElote from "@/assets/items/fusion-elote.jpg.asset.json";
 
-type Dish = {
-  name: string;
-  desc: string;
-  price: string;
-  img: string;
-  special?: boolean;
-};
+type Dish = { name: string; desc: string; price: string; img: string; special?: boolean };
 
 const dishes: Dish[] = [
-  { name: "Sichuan Wok Beef", desc: "Smoky tenderloin, scallion, dried chili, soy reduction.", price: "€26", img: beef, special: true },
-  { name: "Wagyu Miso Skewers", desc: "Charcoal-glazed wagyu, white miso, sesame crumb.", price: "€34", img: wagyu },
-  { name: "Volcano Ramen", desc: "Pork belly, chili oil, soft egg, fermented broth.", price: "€19", img: ramen },
-  { name: "Black Cod Saikyo", desc: "72h-marinated cod, torched miso, edible blossoms.", price: "€38", img: cod, special: true },
-  { name: "Chili Tiger Prawns", desc: "Sichuan glaze, fermented bean, citrus oil.", price: "€28", img: prawns },
-  { name: "Hoisin Duck Breast", desc: "Pink-roasted duck, pomegranate, scallion.", price: "€32", img: duck },
-  { name: "Sesame Tuna Tataki", desc: "Bluefin, ponzu pearls, micro shiso.", price: "€29", img: tuna },
-  { name: "Chef's Tasting Wok", desc: "Five-course flame-tossed selection. Daily.", price: "€68", img: beef },
+  { name: "Boso Burgeris", desc: "Signature house burger — brioche bun, prime beef, house sauce.", price: "€12.90", img: boso.url, special: true },
+  { name: "Elote Traškios Vištienos Mėsainis", desc: "Crispy chicken, elote street-corn glaze, brioche bun.", price: "€10.90", img: elote.url, special: true },
+  { name: "Klasikinis Mėsainis su Šonine", desc: "Classic beef burger with crispy bacon.", price: "€8.90", img: klas.url },
+  { name: "Cezario Salotos su Kepta Vištiena", desc: "Caesar salad with grilled chicken, parmesan, croutons.", price: "€10.90", img: cezario.url },
+  { name: "Azijietiškos Krevečių Salotos", desc: "Asian-style prawn salad, citrus-chili dressing.", price: "€11.90", img: krev.url },
+  { name: "Lipnūs BBQ Sparneliai", desc: "Sticky BBQ chicken wings (5 pcs).", price: "€9.90", img: bbq.url },
+  { name: "Loaded Bulvytės su Jautiena", desc: "Loaded fries topped with beef, cheese and sauces.", price: "€9.90", img: loaded.url },
+  { name: "Fusion Elote", desc: "Grilled street corn, cotija, chili-lime crema.", price: "€5.90", img: fusionElote.url },
 ];
 
 export const SignatureMenu = () => {
@@ -39,8 +34,8 @@ export const SignatureMenu = () => {
             Eight dishes. <span className="italic text-flame-gradient">One fire.</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-lg">
-            A tightly curated menu — every plate handcrafted at the wok or grill, plated
-            with European restraint and Asian soul.
+            A tightly curated menu — every plate grilled over open flame or simmered
+            low and slow, where West African spice meets Baltic soul.
           </p>
         </div>
 
@@ -58,7 +53,7 @@ export const SignatureMenu = () => {
                   loading="lazy"
                   width={800}
                   height={800}
-                  className="h-full w-full object-cover transition-transform duration-1200 ease-out group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent opacity-90 group-hover:opacity-70 transition-opacity" />
                 {d.special && (

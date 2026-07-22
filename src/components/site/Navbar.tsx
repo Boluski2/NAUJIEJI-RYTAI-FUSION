@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/menu/logo.jpeg.asset.json";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "Menu", href: "#menu" },
-  { label: "About", href: "#about" },
-  { label: "Reservations", href: "#reservations" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Menu", href: "/menu" },
+  { label: "Reservations", href: "/#reservations" },
 ];
 
 export const Navbar = () => {
@@ -32,12 +29,12 @@ export const Navbar = () => {
       )}
     >
       <nav className="container flex h-20 items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5 group">
-          <Flame className="h-5 w-5 text-ember transition-transform group-hover:scale-110" strokeWidth={1.5} />
-          <div className="leading-none">
-            <div className="font-serif text-base tracking-[0.2em] text-foreground">NAUJIEJI RYTAI</div>
-            <div className="text-[10px] tracking-[0.4em] text-gold mt-0.5">FUSION</div>
-          </div>
+        <a href="/#home" className="flex items-center gap-3 group">
+          <img
+            src={logo.url}
+            alt="Naujieji Rytai Fusion"
+            className="h-12 w-12 object-cover rounded-sm transition-transform group-hover:scale-105"
+          />
         </a>
 
         <ul className="hidden lg:flex items-center gap-9">
@@ -54,7 +51,7 @@ export const Navbar = () => {
         </ul>
 
         <a
-          href="#reservations"
+          href="/#reservations"
           className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-xs uppercase tracking-[0.2em] border border-gold/40 text-gold hover:bg-gold hover:text-accent-foreground transition-all duration-300"
         >
           Reserve
@@ -84,7 +81,7 @@ export const Navbar = () => {
               </li>
             ))}
             <a
-              href="#reservations"
+              href="/#reservations"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex w-fit items-center px-5 py-2.5 text-xs uppercase tracking-[0.2em] border border-gold/40 text-gold"
             >

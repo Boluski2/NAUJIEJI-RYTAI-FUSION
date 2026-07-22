@@ -10,8 +10,8 @@ const items = [
   { src: grill, alt: "Charcoal grill flames" },
   { src: dessert, alt: "Gold leaf dessert" },
   { src: cocktail, alt: "Bartender crafting cocktail", span: "lg:col-span-2" },
-  { src: duck, alt: "Hoisin duck breast" },
-  { src: tuna, alt: "Sesame tuna tataki" },
+  { src: duck, alt: "Duck egusi plate" },
+  { src: tuna, alt: "Šaltibarščiai reimagined" },
 ];
 
 export const Gallery = () => {
@@ -36,7 +36,7 @@ export const Gallery = () => {
                 src={it.src}
                 alt={it.alt}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-1500 ease-out group-hover:scale-110"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-charcoal-deep/30 group-hover:bg-charcoal-deep/10 transition-colors" />
               <div className="absolute inset-0 ring-1 ring-inset ring-gold/0 group-hover:ring-gold/40 transition" />
