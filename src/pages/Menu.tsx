@@ -2,21 +2,21 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Flame } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
-import logo from "@/assets/menu/logo.jpeg.asset.json";
-import m1 from "@/assets/menu/menu-1.png.asset.json";
-import m2 from "@/assets/menu/menu-2.png.asset.json";
-import m3 from "@/assets/menu/menu-3.jpeg.asset.json";
-import m4 from "@/assets/menu/menu-4.png.asset.json";
-import m5 from "@/assets/menu/menu-5.png.asset.json";
-import m6 from "@/assets/menu/menu-6.png.asset.json";
+import logo from "@/assets/menu/logo.jpeg";
+import m1 from "@/assets/menu/menu-1.png";
+import m2 from "@/assets/menu/menu-2.png";
+import m3 from "@/assets/menu/menu-3.jpeg";
+import m4 from "@/assets/menu/menu-4.png";
+import m5 from "@/assets/menu/menu-5.png";
+import m6 from "@/assets/menu/menu-6.png";
 
 const boards = [
-  { src: m1.url, title: "Dienos pietūs · Selection I" },
-  { src: m2.url, title: "Dienos pietūs · Selection II" },
-  { src: m3.url, title: "Dienos pietūs · Selection III" },
-  { src: m4.url, title: "Dienos pietūs · Selection IV" },
-  { src: m5.url, title: "Dienos pietūs · Selection V" },
-  { src: m6.url, title: "Dienos pietūs · Selection VI" },
+  { src: m1, title: "Dienos pietūs · Selection I" },
+  { src: m2, title: "Dienos pietūs · Selection II" },
+  { src: m3, title: "Dienos pietūs · Selection III" },
+  { src: m4, title: "Dienos pietūs · Selection IV" },
+  { src: m5, title: "Dienos pietūs · Selection V" },
+  { src: m6, title: "Dienos pietūs · Selection VI" },
 ];
 
 const Menu = () => {
@@ -76,7 +76,7 @@ const Menu = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-radial-ember blur-2xl scale-125" />
               <img
-                src={logo.url}
+                src={logo}
                 alt="Naujieji Rytai Fusion — Wok, Suya, Burger, Grill & Lounge"
                 className="relative w-64 sm:w-80 h-auto rounded-sm shadow-ember"
               />

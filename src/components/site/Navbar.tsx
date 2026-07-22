@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/menu/logo.jpeg.asset.json";
+import logo from "@/assets/menu/logo.jpeg";
 
 const links = [
   { label: "Menu", href: "/menu" },
@@ -31,7 +31,7 @@ export const Navbar = () => {
       <nav className="container flex h-20 items-center justify-between">
         <a href="/#home" className="flex items-center gap-3 group">
           <img
-            src={logo.url}
+            src={logo}
             alt="Naujieji Rytai Fusion"
             className="h-12 w-12 object-cover rounded-sm transition-transform group-hover:scale-105"
           />

@@ -1,24 +1,24 @@
 import { ArrowRight, Flame } from "lucide-react";
-import boso from "@/assets/items/boso-burgeris.jpg.asset.json";
-import elote from "@/assets/items/elote-vistienos-mesainis.jpg.asset.json";
-import klas from "@/assets/items/klasikinis-mesainis.jpg.asset.json";
-import cezario from "@/assets/items/cezario-salotos.jpg.asset.json";
-import krev from "@/assets/items/kreveciu-salotos.jpg.asset.json";
-import bbq from "@/assets/items/bbq-sparneliai.jpg.asset.json";
-import loaded from "@/assets/items/loaded-bulvytes.jpg.asset.json";
-import fusionElote from "@/assets/items/fusion-elote.jpg.asset.json";
+import boso from "@/assets/items/boso-burgeris.png";
+import elote from "@/assets/items/elote-vistienos-mesainis.png";
+import klas from "@/assets/items/klasikinis-mesainis.png";
+import cezario from "@/assets/items/cezario-salotos.png";
+import krev from "@/assets/items/kreveciu-salotos.png";
+import bbq from "@/assets/items/bbq-sparneliai.png";
+import loaded from "@/assets/items/loaded-bulvytes.png";
+import fusionElote from "@/assets/items/fusion-elote.png";
 
 type Dish = { name: string; desc: string; price: string; img: string; special?: boolean };
 
 const dishes: Dish[] = [
-  { name: "Boso Burgeris", desc: "Signature house burger — brioche bun, prime beef, house sauce.", price: "€12.90", img: boso.url, special: true },
-  { name: "Elote Traškios Vištienos Mėsainis", desc: "Crispy chicken, elote street-corn glaze, brioche bun.", price: "€10.90", img: elote.url, special: true },
-  { name: "Klasikinis Mėsainis su Šonine", desc: "Classic beef burger with crispy bacon.", price: "€8.90", img: klas.url },
-  { name: "Cezario Salotos su Kepta Vištiena", desc: "Caesar salad with grilled chicken, parmesan, croutons.", price: "€10.90", img: cezario.url },
-  { name: "Azijietiškos Krevečių Salotos", desc: "Asian-style prawn salad, citrus-chili dressing.", price: "€11.90", img: krev.url },
-  { name: "Lipnūs BBQ Sparneliai", desc: "Sticky BBQ chicken wings (5 pcs).", price: "€9.90", img: bbq.url },
-  { name: "Loaded Bulvytės su Jautiena", desc: "Loaded fries topped with beef, cheese and sauces.", price: "€9.90", img: loaded.url },
-  { name: "Fusion Elote", desc: "Grilled street corn, cotija, chili-lime crema.", price: "€5.90", img: fusionElote.url },
+  { name: "Boso Burgeris", desc: "Signature house burger — brioche bun, prime beef, house sauce.", price: "€12.90", img: boso, special: true },
+  { name: "Elote Traškios Vištienos Mėsainis", desc: "Crispy chicken, elote street-corn glaze, brioche bun.", price: "€10.90", img: elote, special: true },
+  { name: "Klasikinis Mėsainis su Šonine", desc: "Classic beef burger with crispy bacon.", price: "€8.90", img: klas },
+  { name: "Cezario Salotos su Kepta Vištiena", desc: "Caesar salad with grilled chicken, parmesan, croutons.", price: "€10.90", img: cezario },
+  { name: "Azijietiškos Krevečių Salotos", desc: "Asian-style prawn salad, citrus-chili dressing.", price: "€11.90", img: krev },
+  { name: "Lipnūs BBQ Sparneliai", desc: "Sticky BBQ chicken wings (5 pcs).", price: "€9.90", img: bbq },
+  { name: "Loaded Bulvytės su Jautiena", desc: "Loaded fries topped with beef, cheese and sauces.", price: "€9.90", img: loaded },
+  { name: "Fusion Elote", desc: "Grilled street corn, cotija, chili-lime crema.", price: "€5.90", img: fusionElote },
 ];
 
 export const SignatureMenu = () => {
